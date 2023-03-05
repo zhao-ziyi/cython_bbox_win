@@ -29,10 +29,12 @@ class build(_build):
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-if os.name == 'nt':
-    compile_args = {'gcc': ['/Qstd=c99']}
-else:
-    compile_args = ['-Wno-cpp']
+# if os.name == 'nt':
+#     compile_args = {'gcc': ['/Qstd=c99']}
+# else:
+#     compile_args = ['-Wno-cpp']
+
+compile_args = {'gcc': ['/Qstd=c99']}
 
 ext_modules = [
     Extension(
